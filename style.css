@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 :root{
     --background-color: white;
     --shadow-color: rgba(0, 0, 0, 0.175);
@@ -14,11 +19,11 @@
 html{
     font-size: 16px;
     font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
 }
 
 /* ----------------------header--------------------------- */
 header .container{
-    background-color: var(--background-color);
     box-shadow: 0px 0px 4px 2px var(--shadow-color);
 }
 
@@ -45,4 +50,57 @@ header .container .header_container{
 
 .header_container .night_mode_container h4{
     font-weight: 500;
+}
+
+
+/* --------------------------------main------------------------------ */
+.main_container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.main_container .countries_cards{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.countries_cards .card{
+    width: 280px;
+    /* border: 2px solid red; */
+    padding-bottom: 1rem;
+    box-shadow: 0 0 8px 1px var(--shadow-color);
+    cursor: pointer;
+}
+
+.countries_cards .card .card_img{
+    width: 100%;
+    height: 170px;
+    background-color: var(--shadow-color);
+}
+
+.countries_cards .card .card_img img{
+    
+    width: 280px;
+    height: 170px;
+}
+
+.countries_cards .card .card_details{
+    padding: 1rem 1rem;
+}
+
+.card_details .country_name{
+    font-size: 1.3rem;
+    padding-bottom: 8px;
+}
+
+.card_details p{
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+}
+
+.card_details p b{
+    font-weight: 600;
 }
