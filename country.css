@@ -12,7 +12,7 @@ a{
 }
 
 :root{
-    --background-color: rgb(244, 238, 238);
+    --background-color: white;
     --shadow-color: rgba(0, 0, 0, 0.175);
     --text-color: black;
 }
@@ -86,12 +86,14 @@ header .container .header_container{
     width: 100%;
     /* border: 2px solid var(--shadow-color); */
     max-height: 350px;
+    border: 2px solid #ddd;
 }
 
 .country_container .country_details{
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    width: 55%;
 }
 
 .country_details .country_name{
