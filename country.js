@@ -49,19 +49,22 @@ fetch(`https://restcountries.com/v3.1/name/${country_name_fetched}?fullText=true
     `;
     country_container.append(div2);
     const border_countries=document.querySelector(".border_countries");
-    (data[0].borders).forEach(element => {
-        fetch(`https://restcountries.com/v3.1/alpha/${element}`)
-        .then(res=>{
-            return res.json();
-        })
-        .then(data=>{
-            let span=document.createElement("a");
-            span.innerText=data[0].name.common;
-            span.href=`./country.html?name=${data[0].name.common}`
-            border_countries.append(span);
-            // console.log(data[0].name.common);
-        })
-    });
+    if(data[0].borders){
+
+        (data[0].borders).forEach(element => {
+            fetch(`https://restcountries.com/v3.1/alpha/${element}`)
+            .then(res=>{
+                return res.json();
+            })
+            .then(data=>{
+                let span=document.createElement("a");
+                span.innerText=data[0].name.common;
+                span.href=`./country.html?name=${data[0].name.common}`
+                border_countries.append(span);
+                // console.log(data[0].name.common);
+            })
+        });
+    }
 })
 
 themeContainer.addEventListener("click",()=>{
