@@ -11,17 +11,26 @@ a{
     color: inherit;
 }
 
-:root{
+body{
     --background-color: white;
     --shadow-color: rgba(0, 0, 0, 0.175);
     --text-color: black;
+    --element-color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark{
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --element-color: hsl(209, 23%, 22%);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 html{
     font-size: 16px;
     font-family: "Poppins", sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 
 /* ----------------------header--------------------------- */
@@ -42,7 +51,7 @@ header .container .header_container{
     font-size: 2rem;
 }
 
-.header_container .night_mode_container{
+.header_container .theme_container{
     display: flex;
     gap: 10px;
     align-items: center;
@@ -50,7 +59,11 @@ header .container .header_container{
     cursor: pointer;
 }
 
-.header_container .night_mode_container h4{
+.header_container .theme_container .sun{
+    display: none;
+}
+
+.header_container .theme_container h4{
     font-weight: 500;
 }
 
@@ -65,7 +78,7 @@ header .container .header_container{
 }
 
 .main_container .back_button{
-    /* background-color: red; */
+    background-color: var(--element-color);
     width: fit-content;
     padding: 0.6rem 1.6rem;
     border-radius: 0.5rem;
@@ -85,7 +98,7 @@ header .container .header_container{
 .country_container .country_flag img{
     width: 100%;
     /* border: 2px solid var(--shadow-color); */
-    max-height: 350px;
+    /* max-height: 350px; */
     border: 2px solid #ddd;
 }
 
@@ -127,4 +140,5 @@ header .container .header_container{
     padding: 0.2rem 1rem;
     border: 1px solid var(--shadow-color);
     border-radius: 1rem;
+    background-color: var(--element-color);
 }

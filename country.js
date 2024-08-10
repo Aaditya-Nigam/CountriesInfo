@@ -2,10 +2,18 @@ const urlParams=new URLSearchParams(location.search)
 const country_name_fetched=urlParams.get("name");
 const country_container=document.querySelector(".country_container");
 const back=document.querySelector(".back_button");
+const themeContainer=document.querySelector(".theme_container");
 
 back.addEventListener("click",()=>{
     history.back();
 })
+
+if(localStorage.getItem("dark")=="true"){
+    document.body.classList.add("dark");
+    themeContainer.querySelector("h4").innerText="Light Mode";
+    themeContainer.querySelector(".sun").style.display="block";
+    themeContainer.querySelector(".moon").style.display="none";
+}
 
 fetch(`https://restcountries.com/v3.1/name/${country_name_fetched}?fullText=true`)
 .then((res)=>{
@@ -54,4 +62,19 @@ fetch(`https://restcountries.com/v3.1/name/${country_name_fetched}?fullText=true
             // console.log(data[0].name.common);
         })
     });
+})
+
+themeContainer.addEventListener("click",()=>{
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("dark",true);
+        themeContainer.querySelector(".sun").style.display="block";
+        themeContainer.querySelector(".moon").style.display="none";
+        themeContainer.querySelector("h4").innerText="Light Mode"
+    }else{
+        localStorage.setItem("dark",false);
+        themeContainer.querySelector(".sun").style.display="none";
+        themeContainer.querySelector(".moon").style.display="block";
+        themeContainer.querySelector("h4").innerText="Dark Mode"
+    }
 })

@@ -11,22 +11,34 @@ a{
     color: inherit;
 }
 
-:root{
+body{
     --background-color: white;
     --shadow-color: rgba(0, 0, 0, 0.175);
     --text-color: black;
+    --element-color: white;
+    background-color: var(--background-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+}
+
+.dark{
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --element-color: hsl(209, 23%, 22%);
+    background-color: var(--background-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
 }
 
 html{
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
+
 
 /* ----------------------header--------------------------- */
 header .container{
     box-shadow: 0px 0px 4px 2px var(--shadow-color);
+    /* background-color: var(--background-color); */
 }
 
 header .container .header_container{
@@ -42,7 +54,7 @@ header .container .header_container{
     font-size: 2rem;
 }
 
-.header_container .night_mode_container{
+.header_container .theme_container{
     display: flex;
     gap: 10px;
     align-items: center;
@@ -50,7 +62,15 @@ header .container .header_container{
     cursor: pointer;
 }
 
-.header_container .night_mode_container h4{
+.header_container .theme_container .sun{
+    display: none;
+}
+
+.header_container .theme_container .moon{
+    display: block;
+}
+
+.header_container .theme_container h4{
     font-weight: 500;
 }
 
@@ -75,6 +95,7 @@ header .container .header_container{
     padding: 0.8rem 1rem;
     width: 350px;
     border-radius: 4px;
+    background-color: var(--element-color);
 }
 
 .main_header_container .search_container input{
@@ -82,6 +103,8 @@ header .container .header_container{
     outline: none;
     width: 93%;
     padding-inline: 8px;
+    background-color: inherit;
+    color: inherit;
 }
 
 .main_header_container .filter_by_container select{
@@ -90,6 +113,8 @@ header .container .header_container{
     outline: none;
     box-shadow: 0 0 4px 2px var(--shadow-color);
     border-radius: 4px;
+    background-color: var(--element-color);
+    color: inherit;
 }
 
 .main_container .countries_cards{
@@ -108,6 +133,7 @@ header .container .header_container{
     border-radius: 0.5rem;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    background-color: var(--element-color);
 }
 
 .countries_cards .card:hover{
